@@ -8,9 +8,6 @@ use std::env;
 use std::thread;
 use std::time::Duration;
 
-// https://github.com/rana/ping/blob/main/src/main.rs
-// Test : sudo tcpdump --interface wlp2s0 -c5 icmp
-//        sudo tcpdump -i lo -nXX
 fn main() -> std::io::Result<()> {
     let args: Vec<String> = env::args().collect();
 
