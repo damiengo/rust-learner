@@ -29,7 +29,7 @@ interrogée retournera automatiquement une réponse `ICMP` avec le type de messa
 
 ## Implémentation en Rust
 
-Le crate `packet` de Rust permet de fabriquer des paquets `ICMP` de type echo, et de parser les réponses.
+Le crate [packet](https://docs.rs/packet/latest/packet/) de Rust permet de fabriquer des paquets `ICMP` de type echo, et de parser les réponses.
 C'est ce qui est utilisé dans cette implémentation de ping.
 
 Un socket est créé pour se connecter à la machine distante, avec le type `RAW` et le protocole `ICMPV4` (pour l'utilisation d'IP V4).
