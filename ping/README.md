@@ -29,10 +29,10 @@ interrogée retournera automatiquement une réponse `ICMP` avec le type de messa
 
 ## Implémentation en Rust
 
-Le crate packet de Rust permet de fabriquer des paquets ICMP de type echo, et de parser les réponses.
+Le crate packet de Rust permet de fabriquer des paquets `ICMP` de type echo, et de parser les réponses.
 C'est ce qui est utilisé dans cette implémentation de ping.
 
-Un socket est créé pour se connecter à la machine distante, avec le type RAW et le protocole ICMPV4 (pour l'utilisation d'IP V4).
+Un socket est créé pour se connecter à la machine distante, avec le type `RAW` et le protocole `ICMPV4` (pour l'utilisation d'IP V4).
 
 ### Execution
 
@@ -45,10 +45,22 @@ La cible `run` du `Makefile` simplifie le lancement:
 make run
 ```
 
+### Analyse du réseau
+
+Il est possible d'analyser les traces du réseau avec la commande `tcpdump`, sur l'interface locale ou sur une interface Wifi par exemple:
+
+```
+sudo tcpdump -i lo -nXX
+sudo tcpdump -i wlp2s0 -nXX
+```
+
+Ces commandes sont très utiles pour visualiser le contenu des paquets qui transitent sur le réseau, et analyser les éventuels problèmes de 
+création ou parsing des paquets `ICMP` de ping.
+
 ## Améliorations possibles
 
- - tests
- - refacto sortie en fonction
- - gestion controle C
- - gestion des paramètres
- - IP v6
+ - Revoir le code pour au minimum créer des fonctions, ou des modules séparés
+ - Ajouter des tests unitaires
+ - Ajouter une gestion des paramètres d'entrée, pour donner la possibilité de modifier l'intervale d'envoi de paquets, le nombre d'envois, etc
+ - Ajouter une gestion de l'arrêt du programme avec la commande control+C
+ - Prise en charge de l'IP V6
