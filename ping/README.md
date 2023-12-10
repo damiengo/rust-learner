@@ -39,7 +39,7 @@ Un socket est créé pour se connecter à la machine distante, avec le type `RAW
 L'ouverture de socket en mode RAW est limitée aux administrateur uniquement, le programme n'est pas lancé avec la commande `cargo run`, 
 mais il est construit puis lancé avec la commande sudo.
 
-La cible `run` du `Makefile` simplifie le lancement:
+La cible `run` du [Makefile](Makefile) simplifie le lancement:
 
 ```
 make run
