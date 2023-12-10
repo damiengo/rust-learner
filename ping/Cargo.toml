@@ -1,0 +1,8 @@
+[package]
+name = "ping"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+packet = "0.1"
+socket2 = {version = "0.5.5", features = ["all"]}
